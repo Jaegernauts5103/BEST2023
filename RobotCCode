@@ -1,1 +1,18 @@
+//define motors
+#pragma config(Motor,  port2,           Rightmotor,        tmotorVex393_MC29, openLoop, encoderPort, None)
+#pragma config(Motor,  port9,           Leftmotor,        tmotorVex393_MC29, openLoop, encoderPort, None)
 
+//defines the joysticks
+int LeftC = vexRT[Ch3];
+int RightC = vexRT[Ch2];
+
+while(1==1)
+{
+//redefines joysticks
+  LeftC = vexRT[Ch3];
+  RightC = vexRT[Ch2];
+
+//sets motor speed to joystick
+  motor[Rightmotor] = RightC;
+  motor[Leftmotor] = LeftC;
+}
