@@ -1,1 +1,11 @@
+#pragma config(Sensor, dgtl2, IRSensorL, sensorDigitalIn)
+#pragma config(Sensor, dgtl4, IRSensorR, sensorDigitalIn)
 
+task main() 
+{
+  while (true) 
+  {
+    writeDebugStreamLine("Value of L: %d, SensorValue(IRSensorL));
+    writeDebugStreamLine("Value of L: %d, SensorValue(IRSensorL));
+  }
+}
