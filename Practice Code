@@ -1,0 +1,39 @@
+//define motors
+#pragma config(Motor,  port2,           Rightmotor,        tmotorVex393_MC29, openLoop, encoderPort, None)
+#pragma config(Motor,  port9,           leftmotor,        tmotorVex393_MC29, openLoop, encoderPort, None)
+//define IR sensors
+#prag config(Sensor, dgtl2, IRSensorL, sensorDigitalIn)
+#pragma config(Sensor, dgtl4, IRSensorR, sensorDigitalIn)
+
+//defines the joysticks
+int LeftC = vexRT[Ch2];
+int RightC = vexRT[Ch2];
+
+//define button
+int 7L = vexRT[Btn7L];
+
+task main() 
+{
+  while(true);
+  {
+    if(7L = 1) 
+    {
+      //sets motors to max speed
+      motor[Rightmotor] = 1;
+      motor[Leftmotor] = 1;
+
+      //prints IR sensor values
+      writeDebugStreamLine("Value of L: %d, SensorValue(IRSensorL));
+      writeDebugStreamLine("Value of R: %d, SensorValue(IRSensorR));
+    } else 
+    {
+      //redefines joysticks
+      LeftC == vexRT[Ch3];
+      RightC == vexRT[Ch2];
+
+      //sets motor speed to joystick
+      motor[Rightmotor] = RightC
+      motor[Leftmotor] = LeftC;
+    }
+  }
+}
